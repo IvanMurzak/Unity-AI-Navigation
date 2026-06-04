@@ -43,9 +43,10 @@ namespace com.IvanMurzak.Unity.MCP.Editor.API
             "- `destination` — the world-space destination point. Ignored when `targetRef` is provided.\n" +
             "- `targetRef` — optional GameObject whose position is used as the destination.\n\n" +
             "## Behavior\n\n" +
-            "Resolves the agent, computes the destination (from `targetRef` if given, else `destination`), calls " +
-            "`SetDestination`, and returns whether the call succeeded plus the agent's `hasPath` / `pathPending` " +
-            "state. Runs on the Unity main thread.")]
+            "Resolves the agent, computes the destination (from `targetRef` if given, else `destination`), and — when " +
+            "the agent is active and placed on a NavMesh — calls `SetDestination`. Off the NavMesh (e.g. before " +
+            "baking, in edit mode) it reports the intended destination without mutating, so the call is always safe. " +
+            "Returns `accepted` plus the agent's `hasPath` / `pathPending` state. Runs on the Unity main thread.")]
         [Description("Sets a NavMeshAgent's destination from a world point or a target GameObject and starts pathfinding.")]
         public AgentSetDestinationResponse SetAgentDestination
         (
@@ -69,11 +70,12 @@ namespace com.IvanMurzak.Unity.MCP.Editor.API
                     ? targetTransform.position
                     : (destination ?? agent.transform.position);
 
+                // SetDestination / the destination setter only work on an active agent placed on a
+                // NavMesh — calling them otherwise logs an error. Off the NavMesh we report the intended
+                // destination without mutating, so the call is safe in edit mode / before baking.
                 bool accepted = false;
-                if (agent.isOnNavMesh)
+                if (agent.isActiveAndEnabled && agent.isOnNavMesh)
                     accepted = agent.SetDestination(dest);
-                else
-                    agent.destination = dest;
 
                 MarkDirtyAndRepaint(agent, agent.gameObject.scene);
 

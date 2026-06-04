@@ -1,0 +1,47 @@
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.ModifierAdd.cs
+  s_6908d424636975::t_f963c156686554 1-117
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.Modify.cs
+  s_6908d424636975::t_b482f47fa27c71 1-133
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.cs
+  s_6908d424636975::t_0cd05e78c6899b 1-49
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.SurfaceAdd.cs
+  s_6908d424636975::t_3126444b13a2cb 1-143
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.SurfaceAdd.pre-Unity.6.5.cs
+  s_6908d424636975::t_22dd2fff3ba468 1-143
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.SetBakeSettings.cs
+  s_6908d424636975::t_1a6a4af2c4132e 1-175
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.AgentAdd.cs
+  s_6908d424636975::t_b7309bda12149f 1-147
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.ModifierVolumeAdd.cs
+  s_6908d424636975::t_8bb4ecff8fec00 1-110
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.Get.cs
+  s_6908d424636975::t_d5e8bebae63fae 1-148
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.SurfaceBake.cs
+  s_6908d424636975::t_e827b6c01a91a7 1-106
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.AgentAdd.pre-Unity.6.5.cs
+  s_6908d424636975::t_3a3c6975f59448 1-147
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.Helpers.cs
+  s_6908d424636975::t_df1bf90fb14ff4 1-84
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.LinkAdd.cs
+  s_6908d424636975::t_011b6931f337c9 1-130
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.AgentSetDestination.cs
+  s_6908d424636975::t_883d10bd7838c5 1-121
+Unity-Package/Assets/root/Editor/Scripts/Tools/Navigation.List.cs
+  s_6908d424636975::t_00657f4cf2b267 1-160
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.2",
+  "base_commit_sha": "9c310edcec5249d75ac6137308a893a3e6e06f34",
+  "prompts": {},
+  "sessions": {
+    "s_6908d424636975": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "383d28d1-a361-40a7-9656-23c1b29d7a19",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

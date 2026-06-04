@@ -13,6 +13,8 @@
 
 </div>
 
+<img width="100%" alt="Navigation" src="https://github.com/IvanMurzak/Unity-AI-Navigation/raw/main/docs/promo/promo-navigation.gif"/>
+
 AI-powered tools for the Unity [AI Navigation](https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/index.html) (NavMesh) workflow. Add `NavMeshSurface`s and bake them, configure bake settings (agent radius / height / slope / voxel size), add `NavMeshAgent`s and set their destinations, place `NavMeshModifier` and `NavMeshModifierVolume` components to carve or override areas, connect `NavMeshLink`s, list / get navigation components, and modify any navigation component field directly through natural language commands — no manual Navigation window navigation. Wraps Unity's **AI Navigation** package (`com.unity.ai.navigation`). Ideal for setting up agent pathfinding, runtime NavMesh baking, and procedural level navigation. Built on top of the [AI Game Developer](https://github.com/IvanMurzak/Unity-MCP) platform.
 
 ### How to use

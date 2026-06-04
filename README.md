@@ -1,204 +1,77 @@
-<h1 align="center"><a href="https://github.com/IvanMurzak/Unity-AI-Tools-Template">Unity AI Tools Template</a></h1>
+<h1 align="center"><a href="https://github.com/IvanMurzak/Unity-AI-Navigation?tab=readme-ov-file#unity-ai-navigation">Unity AI Navigation</a></h1>
 
-<img width="100%" alt="Stats" src="https://github.com/IvanMurzak/Unity-AI-Tools-Template/raw/main/docs/img/ai-template-glitch.gif"/>
+<div align="center" width="100%">
 
-Template for AI MCP Tools for [AI Game Developer (Unity-MCP)](https://github.com/IvanMurzak/Unity-MCP). Use this template to create your custom MCP tools for Unity Engine in 30 minutes. Read more about custom MCP tools [here](https://github.com/IvanMurzak/Unity-MCP?tab=readme-ov-file#add-custom-mcp-tool).
+[![MCP](https://badge.mcpx.dev 'MCP Server')](https://modelcontextprotocol.io/introduction)
+[![OpenUPM](https://img.shields.io/npm/v/com.ivanmurzak.unity.mcp.navigation?label=OpenUPM&registry_uri=https://package.openupm.com&labelColor=333A41 'OpenUPM package')](https://openupm.com/packages/com.ivanmurzak.unity.mcp.navigation/)
+[![Unity Editor](https://img.shields.io/badge/Editor-X?style=flat&logo=unity&labelColor=333A41&color=2A2A2A 'Unity Editor supported')](https://unity.com/releases/editor/archive)
+[![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg 'Tests Passed')](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)</br>
+[![Discord](https://img.shields.io/badge/Discord-Join-7289da?logo=discord&logoColor=white&labelColor=333A41 'Join')](https://discord.gg/cfbdMZX99G)
+[![Stars](https://img.shields.io/github/stars/IvanMurzak/Unity-AI-Navigation 'Stars')](https://github.com/IvanMurzak/Unity-AI-Navigation/stargazers)
+[![License](https://img.shields.io/github/license/IvanMurzak/Unity-AI-Navigation?label=License&labelColor=333A41)](https://github.com/IvanMurzak/Unity-AI-Navigation/blob/main/LICENSE)
+[![Stand With Ukraine](https://raw.githubusercontent.com/vshymanskyy/StandWithUkraine/main/badges/StandWithUkraine.svg)](https://stand-with-ukraine.pp.ua)
 
-This template repository is designed to be easily updated into a real Unity package. Please follow the instruction bellow, it will help you to go through the entire process of package creation, distribution and installing.
+</div>
 
-# Steps to make your package
+AI-powered tools for the Unity [AI Navigation](https://docs.unity3d.com/Packages/com.unity.ai.navigation@1.1/manual/index.html) (NavMesh) workflow. Add `NavMeshSurface`s and bake them, configure bake settings (agent radius / height / slope / voxel size), add `NavMeshAgent`s and set their destinations, place `NavMeshModifier` and `NavMeshModifierVolume` components to carve or override areas, connect `NavMeshLink`s, list / get navigation components, and modify any navigation component field directly through natural language commands — no manual Navigation window navigation. Wraps Unity's **AI Navigation** package (`com.unity.ai.navigation`). Ideal for setting up agent pathfinding, runtime NavMesh baking, and procedural level navigation. Built on top of the [AI Game Developer](https://github.com/IvanMurzak/Unity-MCP) platform.
 
-### 1️⃣ Click the button - create repository
+### How to use
 
-[![create new repository](https://user-images.githubusercontent.com/9135028/198753285-3d3c9601-0711-43c7-a8f2-d40ec42393a2.png)](https://github.com/IvanMurzak/Unity-AI-Tools-Template/generate)
+- [Instructions](https://github.com/IvanMurzak/Unity-MCP?tab=readme-ov-file#step-2-install-mcp-client)
+- [Video Tutorial for Visual Studio Code](https://www.youtube.com/watch?v=ZhP7Ju91mOE)
+- [Video Tutorial for Visual Studio](https://www.youtube.com/watch?v=RGdak4T69mc)
 
-### 2️⃣ Clone your new repository
+[![DOWNLOAD INSTALLER](https://github.com/IvanMurzak/Unity-MCP/blob/main/docs/img/button/button_download.svg?raw=true)](https://github.com/IvanMurzak/Unity-AI-Navigation/releases/latest/download/AI-Navigation-Installer.unitypackage)
 
-### 3️⃣ Initialize Project
+### Stability status
 
-Use the initialization script to rename the package and replace all placeholders.
+| Unity Version | Editmode                                                                                                                                                                                                          | Playmode                                                                                                                                                                                                          | Standalone                                                                                                                                                                                                          |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 2022.3.62f3   | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2022-3-62f3-editmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2022-3-62f3-playmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2022-3-62f3-standalone)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       |
+| 2023.2.22f1   | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2023-2-22f1-editmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2023-2-22f1-playmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2023-2-22f1-standalone)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       |
+| 6000.3.1f1    | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-6000-3-1f1-editmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)        | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-6000-3-1f1-playmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)        | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-6000-3-1f1-standalone)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)        |
 
-```powershell
-./commands/init.ps1 -PackageId "com.company.package" -PackageName "My Package"
-```
+## AI Navigation Tools
 
-This script will:
-- Rename directories and files.
-- Replace `com.IvanMurzak.Unity.MCP.Navigation`, `AI Navigation`, etc. in all files and folder names.
+11 tools, grouped by purpose:
 
-### 4️⃣ Update `package.json`
-Open `Unity-Package/Assets/root/package.json` and update:
-- `description`
-- `author`
-- `keywords`
-- `unity` (minimum supported Unity version)
+### Surfaces & baking
 
-2. **Generate Meta Files**
-   To ensure all Unity meta files are correctly generated:
-   - Open Unity Hub.
-   - Add the `Installer` folder as a project.
-   - Add the `Unity-Package` folder as a project.
-   - Open both projects in Unity Editor. This will generate the necessary `.meta` files.
+- `navigation-surface-add` - Add a `NavMeshSurface` to a GameObject
+- `navigation-surface-bake` - Bake the NavMesh for a `NavMeshSurface`
+- `navigation-set-bake-settings` - Set bake settings on a `NavMeshSurface` (agent radius / height / slope / voxel size, …)
 
-### 5️⃣ Generate Meta Files
+### Agents & links
 
-#### Using script
-   Open Unity project to generate `.meta` files.
-   **On Mac and Linux**:
-   ```bash
-   ./commands/open-all-projects-unix.sh
-   ```
-   **On Windows**:
-   ```bash
-   ./commands/open-all-projects-windows.ps1
-   ```
-#### OR Manually
-   You may open the projects manually to achieve the same result.
-   - Open Unity Hub.
-   - Add the `Installer` folder as a project.
-   - Add the `Unity-Package` folder as a project.
-   - Open both projects in Unity Editor. This will generate the necessary `.meta` files.
+- `navigation-agent-add` - Add a `NavMeshAgent` to a GameObject
+- `navigation-agent-set-destination` - Set a `NavMeshAgent`'s destination (drives pathfinding)
+- `navigation-link-add` - Add a `NavMeshLink` connecting two points across the NavMesh
 
-### 6️⃣ Add MCP Tools
+### Modifiers
 
-Decide what type of MCP tool you need:
+- `navigation-modifier-add` - Add a `NavMeshModifier` to override/ignore an object during baking
+- `navigation-modifier-volume-add` - Add a `NavMeshModifierVolume` to mark an area region of the NavMesh
 
-- **MCP tool for Unity Editor**
-  - ✔️ Works in Unity Editor (Edit Mode)
-  - ✔️ Works in Unity Editor (Play Mode)
-  - ✔️ Has access to Editor API
-  - ❌ Available in a game build
-- **MCP tool for Unity Runtime**
-  - ✔️ Works in Unity Editor (Edit Mode)
-  - ✔️ Works in Unity Editor (Play Mode)
-  - ❌ Has access to Editor API
-  - ✔️ Available in a game build
+### Inspection & generic
 
-Based on your choice create script at the location
+- `navigation-list` - List all navigation components in the active scene
+- `navigation-get` - Get a navigation component's data via ReflectorNet
+- `navigation-modify` - Generic write: apply a `SerializedMember` diff to any navigation component via ReflectorNet (escape hatch for fields not covered by the dedicated tools)
 
-- Editor: `Unity-Package/Assets/root/Editor`
-- Runtime: `Unity-Package/Assets/root/Runtime`
+## Installation
 
-> Read detailed instructions about custom tool development [here](https://github.com/IvanMurzak/Unity-MCP?tab=readme-ov-file#add-custom-mcp-tool).
+### Option 1 - Installer
 
-```csharp
-[McpPluginToolType]
-public static class MyCustomTool
-{
-    [McpPluginTool("my-custom-feature", Title = "Do my custom feature")]
-    [Description("Put here the tool description for LLM.")]
-    public static Task<bool> DoTurn(
-        [Description("Add description to the input property, help LLM better understand it.)]
-        int figureId,
-        [Description("Add description to the input property, help LLM better understand it.)]
-        Vector2Int position)
-    {
-        // do any logic in background thread here
-        return MainThread.Instance.RunAsync(() =>
-        {
-            // do any logic in main thread here
+- **[Download Installer](https://github.com/IvanMurzak/Unity-AI-Navigation/releases/latest/download/AI-Navigation-Installer.unitypackage)**
+- **Import installer into Unity project**
+  > - You can double-click on the file - Unity will open it automatically
+  > - OR: Open Unity Editor first, then click on `Assets/Import Package/Custom Package`, and choose the file
 
-            return true;
-        });
-    }
-}
-```
-
----
-
-# Optional steps
-
-### 1. Version Management
-
-To update the package version across all files (package.json, Installer.cs, etc.), use the bump version script:
-
-```powershell
-.\commands\bump-version.ps1 -NewVersion "1.0.1"
-```
-
-### 2. Setup CI/CD
-
-To enable automatic testing and deployment:
-
-1.  **Configure GitHub Secrets**
-    Go to `Settings` > `Secrets and variables` > `Actions` > `New repository secret` and add:
-    -   `UNITY_EMAIL`: Your Unity account email.
-    -   `UNITY_PASSWORD`: Your Unity account password.
-    -   `UNITY_LICENSE`: Content of your `Unity_lic.ulf` file.
-        -   Windows: `C:/ProgramData/Unity/Unity_lic.ulf`
-        -   Mac: `/Library/Application Support/Unity/Unity_lic.ulf`
-        -   Linux: `~/.local/share/unity3d/Unity/Unity_lic.ulf`
-
-2.  **Enable Workflows**
-    Rename the sample workflow files to enable them:
-    -   `.github/workflows/release.yml-sample` ➡️ `.github/workflows/release.yml`
-    -   `.github/workflows/test_pull_request.yml-sample` ➡️ `.github/workflows/test_pull_request.yml`
-
-3.  **Update Unity Version**
-    Open both `.yml` files and update the `UNITY_VERSION` (or similar variable) to match your project's Unity Editor version.
-
-4.  **Automatic Deployment**
-    The release workflow triggers automatically when you push to the `main` branch with an incremented version in `package.json`.
-
-### 3. Add files into `Unity-Package/Assets/root` folder
-
-[Unity guidelines](https://docs.unity3d.com/Manual/cus-layout.html) about organizing files into the package root directory
-
-```text
-  <root>
-  ├── package.json
-  ├── README.md
-  ├── CHANGELOG.md
-  ├── LICENSE.md
-  ├── Third Party Notices.md
-  ├── Editor
-  │   ├── [company-name].[package-name].Editor.asmdef
-  │   └── EditorExample.cs
-  ├── Runtime
-  │   ├── [company-name].[package-name].asmdef
-  │   └── RuntimeExample.cs
-  ├── Tests
-  │   ├── Editor
-  │   │   ├── [company-name].[package-name].Editor.Tests.asmdef
-  │   │   └── EditorExampleTest.cs
-  │   └── Runtime
-  │        ├── [company-name].[package-name].Tests.asmdef
-  │        └── RuntimeExampleTest.cs
-  ├── Samples~
-  │        ├── SampleFolder1
-  │        ├── SampleFolder2
-  │        └── ...
-  └── Documentation~
-       └── [package-name].md
-```
-
-# Final polishing
-
-- Update the `README.md` file (this file) with information about your package.
-- Copy the updated `README.md` to `Assets/root` as well.
-
-> ⚠️ Everything outside of the `root` folder won't be added to your package. But still could be used for testing or showcasing your package at your repository.
-
-### 1. Deploy to any registry you like
-
-- [Deploy to OpenUPM](https://github.com/IvanMurzak/Unity-Package-Template/blob/main/Docs/Deploy-OpenUPM.md) (recommended)
-- [Deploy using GitHub](https://github.com/IvanMurzak/Unity-Package-Template/blob/main/Docs/Deploy-GitHub.md)
-- [Deploy to npmjs.com](https://github.com/IvanMurzak/Unity-Package-Template/blob/main/Docs/Deploy-npmjs.md)
-
-### 2. Install your package into Unity Project
-
-When your package is distributed, you can install it into any Unity project.
-
-> Don't install into the same Unity project, please use another one.
+### Option 2 - OpenUPM-CLI
 
 - [Install OpenUPM-CLI](https://github.com/openupm/openupm-cli#installation)
-- Open a command line at the root of Unity project (the folder which contains `Assets`)
-- Execute the command (for `OpenUPM` hosted package)
+- Open the command line in your Unity project folder
 
-  ```bash
-  openupm add AI Navigation
-  ```
-
-# Final view in Unity Package Manager
-
-![image](https://user-images.githubusercontent.com/9135028/198777922-fdb71949-aee7-49c8-800f-7db885de9453.png)
+```bash
+openupm add com.ivanmurzak.unity.mcp.navigation
+```

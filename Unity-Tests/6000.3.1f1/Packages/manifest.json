@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.ivanmurzak.unity.mcp.navigation": "file:./../../../Unity-Package/Assets/root",
+    "com.ivanmurzak.unity.mcp.navigation": "file:./../../../Unity-Package/Packages/com.ivanmurzak.unity.mcp.navigation",
     "com.unity.ai.navigation": "1.1.7",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.visualstudio": "2.0.25",
@@ -45,8 +45,7 @@
       "url": "https://package.openupm.com",
       "scopes": [
         "com.ivanmurzak",
-        "extensions.unity",
-        "org.nuget"
+        "extensions.unity"
       ]
     }
   ],

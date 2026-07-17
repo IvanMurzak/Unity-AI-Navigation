@@ -1,0 +1,47 @@
+Unity-Package/Assets/Plugins/NuGet/.nuget-installed.json
+  s_f7f7392a09f46e::t_0bd9a239adefb4 4,10,16
+Unity-Package/Assets/Plugins/NuGet/McpPlugin.Common.dll.meta
+  s_f7f7392a09f46e::t_bf7fe2ba1d7b81 14-19,28
+Unity-Package/Assets/Plugins/NuGet/McpPlugin.dll.meta
+  s_f7f7392a09f46e::t_d6e90377d62df4 14-19,28
+Unity-Package/Assets/Plugins/NuGet/Microsoft.Extensions.DependencyInjection.Abstractions.dll.meta
+  s_f7f7392a09f46e::t_d25fbc2f0565a9 14-19,28
+Unity-Package/Assets/Plugins/NuGet/Microsoft.Extensions.Logging.Abstractions.dll.meta
+  s_f7f7392a09f46e::t_ead8f1f61591bd 14-19,28
+Unity-Package/Assets/Plugins/NuGet/System.Runtime.CompilerServices.Unsafe.dll.meta
+  s_f7f7392a09f46e::t_154ea89180e3af 14-19,28
+Unity-Tests/2022.3.62f3/Assets/Plugins/NuGet/.nuget-installed.json
+  s_f7f7392a09f46e::t_0bf4d1b4d1575f 4,10,16
+Unity-Tests/2022.3.62f3/Assets/Plugins/NuGet/McpPlugin.Common.dll.meta
+  s_f7f7392a09f46e::t_167ef04378595f 14-19,28
+Unity-Tests/2022.3.62f3/Assets/Plugins/NuGet/McpPlugin.dll.meta
+  s_f7f7392a09f46e::t_50ce7ad966fbdd 14-19,28
+Unity-Tests/2022.3.62f3/Assets/Plugins/NuGet/Microsoft.Extensions.DependencyInjection.Abstractions.dll.meta
+  s_f7f7392a09f46e::t_c66ad1a0b4fd7d 14-19,28
+Unity-Tests/2022.3.62f3/Assets/Plugins/NuGet/Microsoft.Extensions.Logging.Abstractions.dll.meta
+  s_f7f7392a09f46e::t_b9aef04234dee0 14-19,28
+Unity-Tests/2022.3.62f3/Assets/Plugins/NuGet/System.Runtime.CompilerServices.Unsafe.dll.meta
+  s_f7f7392a09f46e::t_0010e8abf15085 14-19,28
+Unity-Tests/2023.2.22f1/Assets/Plugins/NuGet/.nuget-installed.json
+  s_f7f7392a09f46e::t_6d004cc2915b0e 4,10,16
+Unity-Tests/2023.2.22f1/Packages/packages-lock.json
+  s_f7f7392a09f46e::t_665c9172025229 4,19
+Unity-Tests/6000.3.1f1/Assets/Plugins/NuGet/.nuget-installed.json
+  s_f7f7392a09f46e::t_0bed5248b9f96d 4,10,16
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "5e2620bf7e9dd23c07e3312fe4353bdfda72e08a",
+  "prompts": {},
+  "sessions": {
+    "s_f7f7392a09f46e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d6d5d57f-6526-4873-9255-59c34d4f8571",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

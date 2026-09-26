@@ -96,8 +96,8 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
             var modifier = go.AddComponent<NavMeshModifier>();
 
             var json = $@"{{
-                ""gameObjectRef"": {{ ""instanceID"": {go.GetEntityId()} }},
-                ""componentRef"": {{ ""instanceID"": {modifier.GetEntityId()} }},
+                ""gameObjectRef"": {{ ""instanceID"": ""{UnityEngine.EntityId.ToULong(go.GetEntityId())}"" }},
+                ""componentRef"": {{ ""instanceID"": ""{UnityEngine.EntityId.ToULong(modifier.GetEntityId())}"" }},
                 ""data"": {{
                     ""typeName"": ""Unity.AI.Navigation.NavMeshModifier"",
                     ""fields"": [

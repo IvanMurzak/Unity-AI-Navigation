@@ -9,7 +9,7 @@
 */
 
 #nullable enable
-#if UNITY_6000_5_OR_NEWER
+#if !UNITY_6000_5_OR_NEWER
 using System.Collections;
 using AIGD;
 using com.IvanMurzak.Unity.MCP.Editor.API;
@@ -46,7 +46,7 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
 
             var tool = new Tool_Navigation();
             var result = tool.AddSurface(
-                gameObjectRef: new GameObjectRef(go.GetEntityId()),
+                gameObjectRef: new GameObjectRef(go.GetInstanceID()),
                 collectObjects: 1,
                 defaultArea: 1);
 
@@ -85,7 +85,7 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
 
             var tool = new Tool_Navigation();
             var result = tool.AddModifier(
-                gameObjectRef: new GameObjectRef(go.GetEntityId()),
+                gameObjectRef: new GameObjectRef(go.GetInstanceID()),
                 overrideArea: true,
                 area: 4,
                 ignoreFromBuild: false,
@@ -109,7 +109,7 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
             var tool = new Tool_Navigation();
             var size = new Vector3(2, 3, 4);
             var result = tool.AddModifierVolume(
-                gameObjectRef: new GameObjectRef(go.GetEntityId()),
+                gameObjectRef: new GameObjectRef(go.GetInstanceID()),
                 size: size,
                 area: 1);
 
@@ -131,7 +131,7 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
             var start = new Vector3(0, 0, -1);
             var end = new Vector3(0, 0, 3);
             var result = tool.AddLink(
-                gameObjectRef: new GameObjectRef(go.GetEntityId()),
+                gameObjectRef: new GameObjectRef(go.GetInstanceID()),
                 startPoint: start,
                 endPoint: end,
                 width: 1.5f,
@@ -156,7 +156,7 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
 
             var tool = new Tool_Navigation();
             // Clearing an unbaked surface should still succeed and report no data.
-            var result = tool.BakeSurface(new GameObjectRef(go.GetEntityId()), clear: true);
+            var result = tool.BakeSurface(new GameObjectRef(go.GetInstanceID()), clear: true);
 
             Assert.IsTrue(result.success, "BakeSurface(clear) should succeed");
             Assert.IsTrue(result.cleared, "cleared flag should be true");

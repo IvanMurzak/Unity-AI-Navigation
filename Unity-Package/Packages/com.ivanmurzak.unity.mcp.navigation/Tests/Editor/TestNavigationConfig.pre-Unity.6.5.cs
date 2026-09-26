@@ -9,7 +9,7 @@
 */
 
 #nullable enable
-#if UNITY_6000_5_OR_NEWER
+#if !UNITY_6000_5_OR_NEWER
 using System.Collections;
 using AIGD;
 using com.IvanMurzak.Unity.MCP.Editor.API;
@@ -30,7 +30,7 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
 
             var tool = new Tool_Navigation();
             var result = tool.SetBakeSettings(
-                gameObjectRef: new GameObjectRef(go.GetEntityId()),
+                gameObjectRef: new GameObjectRef(go.GetInstanceID()),
                 voxelSize: 0.25f);
 
             Assert.IsTrue(result.success, "SetBakeSettings should succeed");
@@ -72,7 +72,7 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
             var tool = new Tool_Navigation();
             var dest = new Vector3(7, 0, -3);
             var result = tool.SetAgentDestination(
-                gameObjectRef: new GameObjectRef(go.GetEntityId()),
+                gameObjectRef: new GameObjectRef(go.GetInstanceID()),
                 destination: dest);
 
             Assert.IsTrue(result.success, "SetAgentDestination should succeed");

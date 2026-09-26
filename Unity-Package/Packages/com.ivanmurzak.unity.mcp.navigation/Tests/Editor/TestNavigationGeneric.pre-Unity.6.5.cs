@@ -9,7 +9,7 @@
 */
 
 #nullable enable
-#if UNITY_6000_5_OR_NEWER
+#if !UNITY_6000_5_OR_NEWER
 using System;
 using System.Collections;
 using com.IvanMurzak.ReflectorNet.Model;
@@ -32,8 +32,8 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
 
             var tool = new Tool_Navigation();
             var result = tool.GetComponentData(
-                gameObjectRef: new GameObjectRef(go.GetEntityId()),
-                componentRef: new ComponentRef(surface!.GetEntityId()));
+                gameObjectRef: new GameObjectRef(go.GetInstanceID()),
+                componentRef: new ComponentRef(surface!.GetInstanceID()));
 
             Assert.IsNotNull(result, "Result should not be null");
             Assert.IsNotNull(result.data, "Serialized data should not be null");
@@ -48,7 +48,7 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
             var go = CreateGameObjectWithNavMeshSurface(GO_SurfaceName);
 
             var tool = new Tool_Navigation();
-            var result = tool.GetComponentData(new GameObjectRef(go.GetEntityId()));
+            var result = tool.GetComponentData(new GameObjectRef(go.GetInstanceID()));
 
             Assert.IsNotNull(result.data, "Should serialize the first NavMesh component");
             StringAssert.Contains("NavMesh", result.componentType, "Resolved component should be a NavMesh type");
@@ -79,9 +79,9 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
 
             var tool = new Tool_Navigation();
             var result = tool.ModifyComponent(
-                gameObjectRef: new GameObjectRef(go.GetEntityId()),
+                gameObjectRef: new GameObjectRef(go.GetInstanceID()),
                 data: diff,
-                componentRef: new ComponentRef(modifier.GetEntityId()));
+                componentRef: new ComponentRef(modifier.GetInstanceID()));
 
             Assert.IsTrue(result.success, "Modification should succeed");
             Assert.AreEqual(newArea, modifier.area, "area should be modified via the fields channel (m_Area)");
@@ -96,8 +96,8 @@ namespace com.IvanMurzak.Unity.MCP.Navigation.Editor.Tests
             var modifier = go.AddComponent<NavMeshModifier>();
 
             var json = $@"{{
-                ""gameObjectRef"": {{ ""instanceID"": {go.GetEntityId()} }},
-                ""componentRef"": {{ ""instanceID"": {modifier.GetEntityId()} }},
+                ""gameObjectRef"": {{ ""instanceID"": {go.GetInstanceID()} }},
+                ""componentRef"": {{ ""instanceID"": {modifier.GetInstanceID()} }},
                 ""data"": {{
                     ""typeName"": ""Unity.AI.Navigation.NavMeshModifier"",
                     ""fields"": [

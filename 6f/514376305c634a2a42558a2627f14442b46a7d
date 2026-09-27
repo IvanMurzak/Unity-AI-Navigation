@@ -1,0 +1,19 @@
+.github/workflows/test_unity_plugin.yml
+  s_a0b49b27163b45::t_4f42da0e58ee9a 93-110,112
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "6f514376305c634a2a42558a2627f14442b46a7d",
+  "prompts": {},
+  "sessions": {
+    "s_a0b49b27163b45": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_a0b49b27163b45",
+        "model": "unknown"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

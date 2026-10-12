@@ -1,0 +1,19 @@
+Unity-Package/Packages/com.ivanmurzak.unity.mcp.navigation/Tests/Editor/TestNavigationGeneric.cs
+  s_91e2bcaa3ed171::t_90d7342a442431 99-100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "045c39b39e3acbd8b02f9ef2b1dbd44c5132a6a5",
+  "prompts": {},
+  "sessions": {
+    "s_91e2bcaa3ed171": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_91e2bcaa3ed171",
+        "model": "unknown"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

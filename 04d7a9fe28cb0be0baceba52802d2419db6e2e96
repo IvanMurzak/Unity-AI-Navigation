@@ -1,0 +1,33 @@
+Unity-Package/Assets/Resources.meta
+  s_9284ad4c8de2f4::t_46209e8de1db25 1-8
+Unity-Package/Assets/Resources/AI-Game-Developer-Config.json.meta
+  s_9284ad4c8de2f4::t_20b7ed7a3b7d41 1-7
+Unity-Tests/2022.3.62f3/ProjectSettings/PackageManagerSettings.asset
+  s_f7f7392a09f46e::t_6cba3b068d3b5c 43-44
+Unity-Tests/2023.2.22f1/ProjectSettings/PackageManagerSettings.asset
+  s_f7f7392a09f46e::t_e97f3f5d492de3 44
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "04d7a9fe28cb0be0baceba52802d2419db6e2e96",
+  "prompts": {},
+  "sessions": {
+    "s_9284ad4c8de2f4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64f4c13c-1681-4443-9cc9-81bbde69cd56",
+        "model": "claude-opus-4-8"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    },
+    "s_f7f7392a09f46e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d6d5d57f-6526-4873-9255-59c34d4f8571",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

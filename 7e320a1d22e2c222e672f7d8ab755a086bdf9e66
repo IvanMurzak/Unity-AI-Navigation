@@ -1,0 +1,29 @@
+"Installer/Assets/com.IvanMurzak/AI Navigation Installer/Installer.cs"
+  s_ed1b4ae4e5d986::t_14df5671cd00e5 22
+Unity-Package/Packages/com.ivanmurzak.unity.mcp.navigation/package.json
+  s_ed1b4ae4e5d986::t_2dde106cdc6bf6 18,22
+Unity-Package/Packages/packages-lock.json
+  s_ed1b4ae4e5d986::t_508de8b53d7c56 4,19
+Unity-Tests/2022.3.62f3/Packages/packages-lock.json
+  s_ed1b4ae4e5d986::t_45c590e9d838a0 4,19
+Unity-Tests/2023.2.22f1/Packages/packages-lock.json
+  s_ed1b4ae4e5d986::t_afb3c6423c19e3 4,19
+Unity-Tests/6000.3.1f1/Packages/packages-lock.json
+  s_ed1b4ae4e5d986::t_3f1fc837fba986 4,19
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.22",
+  "base_commit_sha": "7e320a1d22e2c222e672f7d8ab755a086bdf9e66",
+  "prompts": {},
+  "sessions": {
+    "s_ed1b4ae4e5d986": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "d065bda2-94f7-45db-b8f4-2da50c81020b",
+        "model": "claude-fable-5"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

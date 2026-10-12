@@ -1,0 +1,23 @@
+"Installer/Assets/com.IvanMurzak/AI Navigation Installer/Installer.cs"
+  s_9284ad4c8de2f4::t_406f6c816181b2 22
+Unity-Package/Packages/com.ivanmurzak.unity.mcp.navigation/package.json
+  s_9284ad4c8de2f4::t_c4e223b17e19cc 18,22
+Unity-Package/Packages/packages-lock.json
+  s_9284ad4c8de2f4::t_11f6c9aeef6706 4
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.14",
+  "base_commit_sha": "eb66c1036562a6284fc8adbf9ebf89895f88d00e",
+  "prompts": {},
+  "sessions": {
+    "s_9284ad4c8de2f4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "64f4c13c-1681-4443-9cc9-81bbde69cd56",
+        "model": "unknown"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

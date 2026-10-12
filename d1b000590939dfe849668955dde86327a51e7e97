@@ -1,0 +1,19 @@
+commands/check-versions.py
+  s_06fd5cdea039b0::t_5b5ddad5cb5423 68-71
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.4",
+  "base_commit_sha": "d1b000590939dfe849668955dde86327a51e7e97",
+  "prompts": {},
+  "sessions": {
+    "s_06fd5cdea039b0": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "s_06fd5cdea039b0",
+        "model": "unknown"
+      },
+      "human_author": "Ivan Murzak <Ivan.D.Murzak@gmail.com>"
+    }
+  }
+}

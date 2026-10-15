@@ -33,32 +33,20 @@ AI-powered tools for the Unity [AI Navigation](https://docs.unity3d.com/Packages
 | 2023.2.22f1   | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2023-2-22f1-editmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2023-2-22f1-playmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-2023-2-22f1-standalone)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)       |
 | 6000.3.1f1    | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-6000-3-1f1-editmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)        | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-6000-3-1f1-playmode)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)        | [![r](https://github.com/IvanMurzak/Unity-AI-Navigation/workflows/release/badge.svg?job=test-unity-6000-3-1f1-standalone)](https://github.com/IvanMurzak/Unity-AI-Navigation/actions/workflows/release.yml)        |
 
-## AI Navigation Tools
+## RQL (no extension tools)
 
-11 tools, grouped by purpose:
+On the RQL branch of Unity-MCP this package adds no MCP tools: it contributes an RQL module, so agents use
+`rql-query` / `rql-mutate` (the `unity-rql` skill carries the full guide with examples). `S` below stands for
+`objects | get components | where $ is NavMeshSurface`.
 
-### Surfaces & baking
-
-- `navigation-surface-add` - Add a `NavMeshSurface` to a GameObject
-- `navigation-surface-bake` - Bake the NavMesh for a `NavMeshSurface`
-- `navigation-set-bake-settings` - Set bake settings on a `NavMeshSurface` (agent radius / height / slope / voxel size, …)
-
-### Agents & links
-
-- `navigation-agent-add` - Add a `NavMeshAgent` to a GameObject
-- `navigation-agent-set-destination` - Set a `NavMeshAgent`'s destination (drives pathfinding)
-- `navigation-link-add` - Add a `NavMeshLink` connecting two points across the NavMesh
-
-### Modifiers
-
-- `navigation-modifier-add` - Add a `NavMeshModifier` to override/ignore an object during baking
-- `navigation-modifier-volume-add` - Add a `NavMeshModifierVolume` to mark an area region of the NavMesh
-
-### Inspection & generic
-
-- `navigation-list` - List all navigation components in the active scene
-- `navigation-get` - Get a navigation component's data via ReflectorNet
-- `navigation-modify` - Generic write: apply a `SerializedMember` diff to any navigation component via ReflectorNet (escape hatch for fields not covered by the dedicated tools)
+| Former tool | RQL |
+| --- | --- |
+| `navigation-surface-add` / `-agent-add` / `-link-add` / `-modifier-add` / `-modifier-volume-add` | `objects \| where name == "Ground" \| call AddComponent("NavMeshSurface")` (also `NavMeshAgent`, `NavMeshLink`, `NavMeshModifier`, `NavMeshModifierVolume`) |
+| `navigation-surface-bake` | `S \| call Bake()` / `Clear()`, `navigation \| call BakeAll()` / `ClearAll()` |
+| `navigation-set-bake-settings` | `navigation \| get agentTypes \| where name == "Humanoid" \| set agentRadius = 0.4, agentSlope = 40`; per surface `S \| set overrideVoxelSize = true, voxelSize = 0.1` |
+| `navigation-agent-set-destination` | `objects \| get components \| where $ is NavMeshAgent \| call SetDestination("(10, 0, 5)")` (also `Warp`, `ResetPath`; Play Mode) |
+| `navigation-list` / `-get` | `S \| select gameObject.name agentType navMeshData buildSettings.agentRadius`, `navigation \| get areas` |
+| `navigation-modify` | plain `set`, with names for ids: `set agentType = "Humanoid", areaName = "Jump", areaNames = ["Walkable"], affectedAgents = ["All"]` |
 
 ## Installation
 

@@ -53,27 +53,29 @@ namespace com.IvanMurzak.Unity.MCP.Editor.Rql.Navigation
         public float minRegionArea { get => Float("minRegionArea"); set => SetFloat("minRegionArea", Require(value, value >= 0, ">= 0")); }
 
         [RqlDescription("use cellSize (voxel size) instead of the automatic one; a surface can still override it (overrideVoxelSize / voxelSize)")]
-        public bool manualCellSize { get => Element(out _).FindPropertyRelative("manualCellSize").boolValue; set => Write(e => e.FindPropertyRelative("manualCellSize").boolValue = value); }
+        public bool manualCellSize { get => Property("manualCellSize").boolValue; set => Write("manualCellSize", p => p.boolValue = value); }
 
         [RqlDescription("voxel size in meters (> 0), used when manualCellSize")]
         public float cellSize { get => Float("cellSize"); set => SetFloat("cellSize", Require(value, value > 0, "> 0")); }
 
         [RqlDescription("use tileSize instead of the automatic one")]
-        public bool manualTileSize { get => Element(out _).FindPropertyRelative("manualTileSize").boolValue; set => Write(e => e.FindPropertyRelative("manualTileSize").boolValue = value); }
+        public bool manualTileSize { get => Property("manualTileSize").boolValue; set => Write("manualTileSize", p => p.boolValue = value); }
 
         [RqlDescription("tile size in voxels (16 - 1024), used when manualTileSize")]
-        public int tileSize { get => Element(out _).FindPropertyRelative("tileSize").intValue; set { Require(value, value >= 16 && value <= 1024, "between 16 and 1024"); Write(e => e.FindPropertyRelative("tileSize").intValue = value); } }
+        public int tileSize { get => Property("tileSize").intValue; set { Require(value, value >= 16 && value <= 1024, "between 16 and 1024"); Write("tileSize", p => p.intValue = value); } }
 
         public override string ToString() => name;
 
-        private float Float(string property) => Element(out _).FindPropertyRelative(property).floatValue;
+        private float Float(string property) => Property(property).floatValue;
 
-        private void SetFloat(string property, float value) => Write(e => e.FindPropertyRelative(property).floatValue = value);
+        private void SetFloat(string property, float value) => Write(property, p => p.floatValue = value);
 
-        private void Write(Action<SerializedProperty> assign)
+        private SerializedProperty Property(string name) => Element(out _).FindPropertyRelative(name);
+
+        private void Write(string property, Action<SerializedProperty> assign)
         {
             var element = Element(out var settings);
-            assign(element);
+            assign(element.FindPropertyRelative(property));
             settings.ApplyModifiedProperties();
         }
 

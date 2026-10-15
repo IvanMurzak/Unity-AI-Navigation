@@ -44,7 +44,7 @@ namespace com.IvanMurzak.Unity.MCP.Editor.Rql.Navigation
         // The call is recorded against this API object, so the surfaces are recorded for undo and marked dirty here.
         private static int ForEachSurface(System.Action<NavMeshSurface> action, string undoName, bool activeOnly)
         {
-            var surfaces = RqlUnity.AllGameObjects().SelectMany(g => g.GetComponents<NavMeshSurface>())
+            var surfaces = RqlUnity.RootGameObjects().SelectMany(r => r.GetComponentsInChildren<NavMeshSurface>(true))
                 .Where(s => s != null && (!activeOnly || s.isActiveAndEnabled)).ToList();
             foreach (var s in surfaces)
             {

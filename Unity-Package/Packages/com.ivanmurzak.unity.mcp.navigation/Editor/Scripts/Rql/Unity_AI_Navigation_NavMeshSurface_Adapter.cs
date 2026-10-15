@@ -55,8 +55,7 @@ namespace com.IvanMurzak.Unity.MCP.Editor.Rql.Navigation
             var folder = AssetFolder(surface);
             if (folder == null) return;
             if (previous != null) AssetDatabase.DeleteAsset(previous);
-            if (!AssetDatabase.IsValidFolder(folder))
-                AssetDatabase.CreateFolder(Path.GetDirectoryName(folder)!.Replace('\\', '/'), Path.GetFileName(folder));
+            RqlEditorApi.Instance.CreateFolder(folder);
             var invalid = Path.GetInvalidFileNameChars();
             var name = new string(surface.name.Select(ch => invalid.Contains(ch) ? '_' : ch).ToArray());
             AssetDatabase.CreateAsset(surface.navMeshData, AssetDatabase.GenerateUniqueAssetPath($"{folder}/NavMesh-{name}.asset"));

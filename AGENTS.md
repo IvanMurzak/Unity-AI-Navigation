@@ -1,9 +1,10 @@
 # AGENTS.md — Unity-AI-Navigation
 
 Unity package `com.ivanmurzak.unity.mcp.navigation` — wraps Unity's **AI Navigation** package
-(`com.unity.ai.navigation`) as `navigation-*` MCP tools: add and bake `NavMeshSurface`s, configure agent-type
-bake settings, add `NavMeshAgent`s and set destinations, add `NavMeshModifier` / `NavMeshModifierVolume` /
-`NavMeshLink` components, list/get navigation components, and modify arbitrary navigation component fields. An
+(`com.unity.ai.navigation`) for AI agents. On branch `experiment/rql` (local experiment) it ships no MCP tools: an
+RQL module for Unity-MCP's `rql-query` / `rql-mutate` (surface `Bake()` / `Clear()`, agent `SetDestination`, agent-type
+bake settings and areas via the `navigation` source, name views of agent types / areas / masks, and a guide rendered
+into the `unity-rql` skill). An
 extension of [AI Game Developer](https://github.com/IvanMurzak/Unity-MCP) (`com.ivanmurzak.unity.mcp`),
 generated from `Unity-AI-Tools-Template`; the user-facing tool list is in `README.md`.
 
@@ -12,9 +13,9 @@ generated from `Unity-AI-Tools-Template`; the user-facing tool list is in `READM
 - `Unity-Package/` — Unity project hosting the package; only `Packages/com.ivanmurzak.unity.mcp.navigation/`
   ships.
   - `package.json` — the version source of truth and the dependency pins.
-  - `Editor/Scripts/Tools/` — the MCP tools (`Tool_Navigation`); new tools go here.
+  - `Editor/Scripts/Rql/` — the RQL module (`NavigationModule`), one adapter per file, the `navigation` source.
   - `Runtime/` — runtime assembly (currently empty).
-  - `Tests/Editor/` (EditMode, `BaseTest` + one file per tool group) and `Tests/Runtime/` (PlayMode).
+  - `Tests/Editor/` (EditMode; `Rql/`: `NavigationTestBase` + one file per adapter / source) and `Tests/Runtime/` (PlayMode).
 - `Unity-Tests/<unity-version>/` — one test project per supported Unity version, consuming the package via
   `file:`. A new version must also be added to `test_pull_request.yml` and `release.yml` (and
   `open-all-projects-*`).

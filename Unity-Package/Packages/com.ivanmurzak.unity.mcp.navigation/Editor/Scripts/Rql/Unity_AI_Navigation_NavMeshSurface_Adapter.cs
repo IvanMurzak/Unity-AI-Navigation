@@ -48,9 +48,12 @@ namespace com.IvanMurzak.Unity.MCP.Editor.Rql.Navigation
         /// </summary>
         public static void Bake(NavMeshSurface surface)
         {
+            var before = surface.navMeshData;
             var previous = OwnedAssetPath(surface);
             surface.BuildNavMesh();
-            if (surface.navMeshData == null || EditorApplication.isPlaying) return;
+            // A failed build (BuildNavMeshData returned null) keeps the previous data: its asset must not be deleted and
+            // re-created from the deleted object.
+            if (surface.navMeshData == null || surface.navMeshData == before || EditorApplication.isPlaying) return;
 
             var folder = AssetFolder(surface);
             if (folder == null) return;

@@ -1,9 +1,10 @@
 # AGENTS.md — Unity-AI-Navigation
 
 Unity package `com.ivanmurzak.unity.mcp.navigation` — wraps Unity's **AI Navigation** package
-(`com.unity.ai.navigation`) as `navigation-*` MCP tools: add and bake `NavMeshSurface`s, configure agent-type
-bake settings, add `NavMeshAgent`s and set destinations, add `NavMeshModifier` / `NavMeshModifierVolume` /
-`NavMeshLink` components, list/get navigation components, and modify arbitrary navigation component fields. An
+(`com.unity.ai.navigation`) for AI agents. On branch `experiment/rql` (local experiment) it ships no MCP tools: an
+RQL module for Unity-MCP's `rql-query` / `rql-mutate` (surface `Bake()` / `Clear()`, agent `SetDestination`, agent-type
+bake settings and areas via the `navigation` source, name views of agent types / areas / masks, and a guide rendered
+into the `unity-rql` skill). An
 extension of [AI Game Developer](https://github.com/IvanMurzak/Unity-MCP) (`com.ivanmurzak.unity.mcp`),
 generated from `Unity-AI-Tools-Template`; the user-facing tool list is in `README.md`.
 
@@ -12,9 +13,9 @@ generated from `Unity-AI-Tools-Template`; the user-facing tool list is in `READM
 - `Unity-Package/` — Unity project hosting the package; only `Packages/com.ivanmurzak.unity.mcp.navigation/`
   ships.
   - `package.json` — the version source of truth and the dependency pins.
-  - `Editor/Scripts/Tools/` — the MCP tools (`Tool_Navigation`); new tools go here.
+  - `Editor/Scripts/Rql/` — the RQL module (`NavigationModule`), one adapter per file, the `navigation` source.
   - `Runtime/` — runtime assembly (currently empty).
-  - `Tests/Editor/` (EditMode, `BaseTest` + one file per tool group) and `Tests/Runtime/` (PlayMode).
+  - `Tests/Editor/` (EditMode; `Rql/`: `NavigationTestBase` + one file per adapter / source) and `Tests/Runtime/` (PlayMode).
 - `Unity-Tests/<unity-version>/` — one test project per supported Unity version, consuming the package via
   `file:`. A new version must also be added to `test_pull_request.yml` and `release.yml` (and
   `open-all-projects-*`).
@@ -44,23 +45,11 @@ maintainer-applied `ci-ok` label and abort if the PR touches `.github/workflows/
 
 ## Critical invariants
 
-- **Main thread only.** Every Unity API call inside a tool MUST be wrapped in
-  `MainThread.Instance.Run(() => { ... })` — MCP calls arrive off the main thread; only argument validation
-  runs outside. So must ReflectorNet calls (`reflector.Serialize`, `TryModify`).
-- **Tool shape.** One `[AiToolType] partial class Tool_Navigation`, split one operation per file
-  (`Navigation.SurfaceAdd.cs`, `Navigation.SurfaceBake.cs`, `Navigation.Modify.cs`, …). Each tool method
-  carries `[AiTool(<id>, Title=…, …Hint=…)]`, `[AiSkillDescription]` / `[AiSkillBody]` and `[Description]`
-  (all LLM-facing); tool IDs are `public const string …ToolId = "navigation-…"`. Shared helpers
-  (`ResolveNavMeshSurface`, `ResolveNavMeshAgent`, `MarkDirtyAndRepaint`) live in `Navigation.Helpers.cs`;
-  error strings in `Tool_Navigation.Error` (`Navigation.cs`).
-- **Bake settings** are project-wide: `navigation-set-bake-settings` edits the agent type through the
-  `NavMeshProjectSettings` serialized object, not a scene component.
-- **EntityId split.** Unity 6.5+ returns `UnityEngine.EntityId` from `GameObject.GetEntityId()`; pre-6.5
-  returns `int` from `GetInstanceID()`. Files surfacing an instance ID ship as a `*.cs`
-  (`#if UNITY_6000_5_OR_NEWER`) + `*.pre-Unity.6.5.cs` (`#if !UNITY_6000_5_OR_NEWER`) pair — e.g.
-  `Navigation.SurfaceAdd.cs` / `Navigation.SurfaceAdd.pre-Unity.6.5.cs`. Keep both variants in sync.
-- **Generic modify via ReflectorNet.** `navigation-modify` applies a `SerializedMember` diff through
-  `reflector.TryModify(ref boxed, data, …)`. The `fields` channel resolves `FieldInfo` and `props` resolves
-  `PropertyInfo`, with **no cross-fallback**: a public field MUST go in `fields`, a property in `props`
-  (otherwise: `Property '…' not found or not writable`).
+- **RQL surface.** Everything is registered by `NavigationModule` (`IRqlModule`, Order 100, found through TypeCache)
+  and documented in its `AddGuide("Navigation", …)` text, which is rendered into the `unity-rql` skill.
+- **Bake settings** are project-wide: `navigation | get agentTypes` (`NavMeshAgentType`) and `areas` (`NavMeshArea`)
+  edit the `NavMeshProjectSettings` serialized object (`NavMeshNames.Settings()`), not a scene component.
+- **Names over ids.** `agentType`, `areaName` / `defaultAreaName`, `areaNames` and `affectedAgents` are name views
+  (`NavigationMembers`) over the numeric members; private backing fields that duplicate a public property are hidden
+  (`NavigationMembers.HideBackingFields`), because writing them bypasses the property logic.
 - Every C# file starts with the copyright box header and `#nullable enable`.
